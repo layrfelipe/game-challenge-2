@@ -132,8 +132,8 @@ Mesmo que estejamos aprendendo em português, adotar o inglês para nomes de var
 
 **Exemplo Prático:**
 
-*   **Ruim (Português):** `feat/adicionar-inventario-jogador`, `variavel_contador = 0`, `// Verifica se o item é pegável`
-*   **Bom (Inglês):** `feat/add-player-inventory`, `item_counter = 0`, `// Check if the item is portable`
+*   **Ruim (Português):** `feat/adicionar-inventario-jogador`
+*   **Bom (Inglês):** `feat/add-player-inventory`
 
 ## Resumo
 
