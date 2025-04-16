@@ -2,7 +2,7 @@
 
 ## Visão Geral do Projeto
 
-Desenvolva um motor de jogo em Python que permita criar e jogar aventuras simples baseadas em texto. O jogador navegará por diferentes locais, interagirá com objetos e personagens. O foco principal será a aplicação de conceitos intermediários de Programação Orientada a Objetos (POO), como **Herança**, **Composição**, **Encapsulamento** e **Polimorfismo**, para modelar o mundo do jogo de forma flexível e extensível. **A complexidade do gerenciamento de estado e da navegação será simplificada** para concentrar o aprendizado nos aspectos da POO.
+Desenvolva um motor de jogo em Python que permita criar e jogar aventuras simples baseadas em texto. O jogador navegará por diferentes locais, interagirá com objetos e personagens. O foco principal será a aplicação de conceitos intermediários de Programação Orientada a Objetos (POO), como **Herança**, **Composição**, **Encapsulamento** e **Polimorfismo** para modelar o mundo do jogo de forma flexível e extensível.
 
 ## Objetivos de Aprendizagem
 
@@ -23,12 +23,12 @@ Desenvolva um motor de jogo em Python que permita criar e jogar aventuras simple
     *   Crie subclasses para `Item` (ex: `Chave`, `Consumivel`) que possam ter comportamentos específicos (ex: um método `usar()`).
     *   Crie subclasses para `Personagem` (ex: `Jogador`, `NPC`) com atributos ou métodos distintos (ex: `falar()`).
 *   **Composição:**
-    *   A classe `Lugar` (anteriormente `Sala`) deve *conter* coleções de `Item`s e `Personagem`ns presentes nela.
-    *   A classe `Jogador` (que herda de `Personagem`) deve *conter* um inventário (uma coleção de `Item`s).
+    *   A classe `Lugar` deve *conter* coleções de `Itens` e `Personagens` presentes nela.
+    *   A classe `Jogador` (que herda de `Personagem`) deve *conter* um inventário (uma coleção de `Itens`).
     *   A classe principal `Jogo` (ou `GameEngine`) *compõe* o estado atual, incluindo o `Lugar` atual do `Jogador` e o próprio objeto `Jogador`.
 *   **Polimorfismo:**
     *   Implemente um método comum (ex: `descrever()` ou `examinar()`) nas classes base/abstratas que subclasses podem sobrescrever. O motor do jogo poderá chamar `objeto.examinar()` sem saber o tipo exato do objeto, e obter a descrição correta.
-    *   A interação com diferentes tipos de `Item`s (ex: `usar(item)`) pode ser tratada polimorficamente.
+    *   A interação com diferentes tipos de `Itens` (ex: `usar(item)`) pode ser tratada polimorficamente.
 *   **Encapsulamento:**
     *   Garanta que os atributos internos das classes (ex: descrição de um lugar, status de um item) sejam acessados e modificados através de métodos, quando apropriado.
 
@@ -134,20 +134,8 @@ Divida o desenvolvimento em partes lógicas e use **pelo menos 5 Pull Requests**
 
 *   **Puzzles Simples:** Implementar portas ou passagens bloqueadas que requerem `Chave`s específicas (`usar chave`).
 *   **Sistema de Combate Básico:** Adicionar atributos de ataque/defesa a `Personagem` e `Item` (como `Arma`), e implementar um comando `atacar`.
-*   **Comandos Mais Complexos:** Melhorar o parser para entender comandos como `usar chave na porta velha`.
-*   **GUI Simples:** Usar `Tkinter` ou `PySimpleGUI` para criar uma interface gráfica básica.
 *   **Efeitos de Itens:** Fazer itens consumíveis (`Consumivel`) terem efeitos reais no jogador.
-
-## Critérios de Avaliação
-
-*   **Aplicação Correta dos Conceitos de POO:** Uso adequado de Herança, Composição, Polimorfismo e Encapsulamento.
-*   **Funcionalidade:** O motor executa as funcionalidades mínimas essenciais descritas (com a navegação e estado simplificados).
-*   **Qualidade do Código:** Clareza, organização (modularização), comentários onde necessário, boas práticas de Python.
-*   **Carregamento do Mundo:** O `mundo.json` é carregado corretamente para inicializar o jogo.
-*   **Uso do Git:** Histórico claro, PRs bem descritos e com escopo definido.
 
 ## Considerações Finais
 
 Este projeto foca em aprofundar seus conhecimentos em POO, modelando um sistema interativo. A simplificação na navegação e no estado permite concentrar-se nas relações entre classes ("é um" vs. "tem um") e como usar Herança e Composição eficazmente. Divirta-se construindo seu próprio mundo de aventura!
-
-Mãos à obra!
