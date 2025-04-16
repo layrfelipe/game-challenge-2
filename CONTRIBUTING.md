@@ -39,6 +39,88 @@ Vamos adotar o seguinte padrão para nomear todas as novas branches (exceto as p
     *   **Seja conciso, mas claro:** Outra pessoa (ou você no futuro) deve entender o propósito da branch lendo seu nome.
     *   **Evite caracteres especiais:** Além do hífen.
 
+
+# Adendo ao Guia: Convenção para Mensagens de Commit
+
+## Por Que Padronizar Mensagens de Commit?
+
+Assim como padronizamos os nomes das branches, ter um formato consistente para as **mensagens de commit** é fundamental. Cada commit representa um pequeno passo salvo no histórico do projeto. Mensagens claras e padronizadas tornam esse histórico muito mais fácil de ler, entender e até mesmo automatizar tarefas (como gerar changelogs).
+
+Vamos adotar a convenção conhecida como **Conventional Commits**. Ela se alinha perfeitamente com nossa nomenclatura de branches.
+
+## O Formato Padrão
+
+A estrutura básica de uma mensagem de commit seguindo o Conventional Commits é:
+
+"<tipo>[escopo opcional]: <descrição>"
+
+
+**Exemplo:** `feat(player): add inventory display command`
+
+**Vamos detalhar cada parte:**
+
+1.  **`<tipo>`:** Indica a **categoria** da mudança introduzida pelo commit. **Use os mesmos tipos que definimos para as branches**, garantindo consistência:
+    *   **`feat`**: Uma nova funcionalidade (feature).
+    *   **`fix`**: Uma correção de bug.
+    *   **`chore`**: Tarefas de manutenção (build, dependências, etc.).
+    *   **`refactor`**: Refatoração de código sem mudança funcional.
+    *   **`docs`**: Mudanças na documentação.
+    *   **`test`**: Adição ou refatoração de testes.
+    *   **`style`**: Ajustes de formatação de código (linting).
+    *   *(Opcional)* `perf`: Uma mudança que melhora a performance.
+
+2.  **`[escopo opcional]`:** (Opcional) Uma palavra ou frase curta entre parênteses `()` que especifica a **parte do código** que a mudança afeta. Ajuda a dar contexto rápido.
+    *   *Exemplos:* `(parser)`, `(inventory)`, `(docs)`, `(game_engine)`, `(item)`
+    *   Se a mudança for muito ampla ou difícil de definir um escopo, pode ser omitido.
+    *   *Exemplo com escopo:* `fix(parser): handle commands with extra spaces`
+    *   *Exemplo sem escopo:* `refactor: improve readability of main loop`
+
+3.  **`: `:** Um dois-pontos e um espaço separam o cabeçalho da descrição.
+
+4.  **`<descrição>`:** Uma descrição **curta e imperativa** do que o commit faz. Siga estas regras:
+    *   **Use Inglês.** (Pelos mesmos motivos do guia de branches).
+    *   Comece com **letra minúscula**.
+    *   Use o **modo imperativo** (como se estivesse dando uma ordem: "add", "fix", "change", "remove" em vez de "added", "fixed", "changes", "removed"). Pense: "Este commit irá... *[descrição]*".
+    *   **Não termine com ponto final**.
+    *   Seja conciso (idealmente, menos de 50-72 caracteres).
+
+
+
+## Exemplos Práticos
+
+**Bons Exemplos:**
+
+*   `feat: add look command to describe current location`
+*   `fix(inventory): prevent adding duplicate items`
+*   `docs: explain the command parsing logic`
+*   `refactor(item): simplify item usage method`
+*   `chore: update project dependencies in requirements.txt`
+*   `test: add unit tests for player movement`
+*   `style: apply black code formatter`
+
+**Exemplos a Evitar:**
+
+*   `Fixed bug` (Não informativo, sem tipo)
+*   `WIP` (Trabalho em progresso - faça commits mais atômicos)
+*   `feat: Added the new inventory system.` (Não imperativo, ponto final)
+*   `changed stuff` (Vago, sem tipo)
+*   `chore: Adding the license file and updating the readme with new instructions` (Muito longo, não imperativo)
+
+## Conectando Commits e Branches
+
+Normalmente, uma branch criada com um certo tipo (ex: `feat/add-new-monster`) conterá principalmente commits desse mesmo tipo (`feat: ...`). Podem ocorrer commits de `fix:` se você corrigir algo relacionado à feature *dentro* da mesma branch, ou `refactor:` se decidir limpar o código antes de finalizar. A chave é a consistência e a clareza do histórico.
+
+## Resumo
+
+*   Use o formato `tipo(escopo): descrição` para suas mensagens de commit.
+*   Mantenha os `tipos` consistentes com os nomes das branches.
+*   Escreva descrições curtas, em inglês, no imperativo e começando com minúscula.
+*   Opcionalmente, use `escopo` para dar mais contexto.
+
+Praticar essas convenções tornará seu histórico do Git muito mais profissional e útil, facilitando a colaboração e a manutenção do projeto a longo prazo.
+
+
+
 ## A Importância de Usar Inglês no Código e Nomes
 
 Mesmo que estejamos aprendendo em português, adotar o inglês para nomes de variáveis, funções, classes, comentários, mensagens de commit e nomes de branches é uma **prática profissional essencial** por várias razões:
