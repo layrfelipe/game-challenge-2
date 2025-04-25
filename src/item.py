@@ -50,9 +50,7 @@ class Key(Item):
         print(self.location)
 
 
-teste = Key('chave', 'descrição', 'rio', False)
 
-teste.load_key()
 
      
 # **PR 2:** Implementação da classe `Item` e subclasses simples.
