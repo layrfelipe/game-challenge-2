@@ -1,27 +1,32 @@
+from game_object import GameObject
+from place import Place
+import os
 import json
-from player import Player
 
 class Game:
-    def __init__(self):
-        self.locations = None
-        self.characters = None
-        self.items = None
-        self.player = None
+    def __init__(self, current_place):
+        self.current_place = []
 
-    def load_world(self, path):
-        with open(path, 'r') as file:
-            data = json.load(file)
-            self.locations = data['locations']
-            self.characters = data['characters']
-            self.items = data['items']
 
-    def start(self):
-        print("Iniciando o jogo...\n")
-        player = Player("Player", "Você é um aventureiro que acordou na floresta.")
-        self.characters.append(player)
-        self.player = player
-        print("Você está na floresta.")
-        print("Você pode ir para:")
-        for location in self.locations:
-            print(f"- {location['name']}")
-    
+
+    def load_place(self):
+        file_path = os.path.dirname(os.path.abspath(__file__))
+        json_path = os.path.join(file_path, 'world.json')
+
+        with open(json_path, 'r', encoding='utf8') as f:
+            loading_worlds = json.load(f)
+
+        locations = loading_worlds['locations']
+        for place in locations:
+            place_name = place.get('name')
+            place_description = place.get('description')
+            place_takes_to = place.get('takes_to')
+            # print(place_name)
+            # print(place_description)
+            # print(place_takes_to)
+            self.current_place.append(Place(place_name, place_description, place_takes_to))
+            
+    def show_description_test(self):
+        to_see = self.current_place[2]
+        vendo = to_see.describe()
+        print(vendo)
