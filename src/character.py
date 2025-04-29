@@ -4,6 +4,10 @@ from place import Place
 
 class Character(GameObject):
     def __init__(self, name: str, description: str, location: str = False, type: str = False):
+        if not name:
+            raise ValueError("Character name cannot be empty.")
+        if not description:
+            raise ValueError("Character description cannot be empty.")
         super().__init__(name, description)
         self.location = location
         self.type = type
