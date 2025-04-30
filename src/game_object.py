@@ -1,7 +1,7 @@
 class GameObject:
-    def __init__(self, place_name: str, place_description: str):
-        self.name = place_name
-        self.description = place_description
+    def __init__(self, name: str, description: str):
+        self.name = name
+        self.description = description
 
 
     def describe(self):
